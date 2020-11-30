@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>04 CSS3过渡（花样告白）</title>
+</head>
+    <style type="text/css">
+    body{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height:100%;
+        background-color: #4993eb;
+    }
+        .top .heart .heart-left{
+            width: 190px;
+            height: 270px;
+            background:#ff0582;
+            border-top-left-radius:100px;
+            border-top-right-radius:100px;
+            margin-left: 204px;
+            transform: rotate(-45deg);
+            box-shadow:0px 0px 3px 3px #ff0582;
+            color:#ffff24;
+            font-size:30px;
+
+        }
+
+        .top .heart .heart-right{
+            width: 190px;
+            height: 270px;
+            background:#ff0582;
+            border-top-left-radius:100px;
+            border-top-right-radius:100px;
+            position: absolute;
+            margin-left: 264px;
+            top:0;
+            transform: rotate(45deg);
+            box-shadow:0px 0px 3px 3px #ff0582;
+            color:#ffff24;
+            font-size: 30px;
+        }
+        .heart-left .text1{
+            position:absolute;
+            margin-left:50px;
+            margin-top: 30px;
+        }
+        .heart-right .text2{
+            position:absolute;
+            margin-left:50px;
+            margin-top: 30px;
+        }
+        .box{
+            width: 300px;
+            min-width: 300px;
+            height: 301px;
+            position: relative;
+            left: 60%;
+            top:-265px;
+           }
+        .box .box1{
+            display: block;
+            content:"";
+            width: 100%;
+            height: 100%;
+            border-radius:150px;
+            background: url('images/bg.png') left top;
+            transform:rotateY(0deg);
+            transform-style:preserve-3d;
+            animation:spin 4s linear infinite;
+        }
+        .box .box1:hover{
+            display: block;
+            content:"";
+            width: 100%;
+            height: 100%;
+            border-radius:150px;
+            background: url('images/bg.png') right top;
+            transform: translateZ(1px);
+            position: absolute;
+            left: 1px;
+            top: 0;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        .item{
+            width: 230px;
+            height:300px;
+            float: left;
+            margin-top:-230px;
+            margin-left: 20px;
+            background-color: white;
+            overflow:hidden;
+           }
+        .item:hover{
+            bottom:10px;
+            box-shadow:2px 2px 5px #ccc;
+        }
+        .pic{
+            background-color: white;
+            padding-top: 50px;
+            text-align: center;
+            background-size:contain;
+           }
+        .desc{
+            height: 100px;
+            width: 230px;
+            font-size: 25px;
+            color:white;
+            font-weight: 300;
+            line-height:100px;
+            background-color: #ff5801;
+            position:relative;
+            bottom:-100px;
+            left: 0;
+            transition:all linear 0.5s;
+            text-align: center;
+        }
+        .item:nth-child(2):hover .desc,
+        .item:nth-child(3):hover .desc,
+        .item:nth-child(4):hover .desc,
+        .item:nth-child(5):hover .desc{
+            bottom:0;
+        }
+        .item:nth-child(2):hover,
+        .item:nth-child(3):hover,
+        .item:nth-child(4):hover,
+        .item:nth-child(5):hover{
+            box-shadow:5px 5pc 0 0 #3c83d7;
+            transform:translateY(-8px);
+        }
+    </style>
+<body>
+    <div class="top">
+         <div class="heart">
+             <div class="heart-left"><div class="text1">某某某</div></div>
+             <div class="heart-right"><div class="text2">我爱你</div></div>
+         </div>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    </div>
+
+    <div class="items">
+        <div class="item">
+            <img src="./images/1.jpg" alt="">
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/2.png" alt="">
+            </div>
+            <div class="desc">有句话悄悄说</div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/3.png" alt="">
+            </div>
+            <div class="desc">你的样子最可爱</div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/4.png" alt="">
+            </div>
+            <div class="desc">喜欢的就是你</div>
+        </div>
+        <div class="item">
+            <div class="pic">
+                <img src="./images/5.png" alt="">
+            </div>
+            <div class="desc">期限是一万年</div>
+        </div>
+    </div>
+</body>
+
+</html>
